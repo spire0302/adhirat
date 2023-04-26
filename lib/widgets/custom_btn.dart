@@ -1,6 +1,4 @@
-import 'package:adhirat/utils/app_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import '../utils/app_color.dart';
 
