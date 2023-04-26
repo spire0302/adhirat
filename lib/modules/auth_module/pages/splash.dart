@@ -1,8 +1,8 @@
 import 'package:adhirat/utils/app_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/app_color.dart';
-import '../../../utils/route_string.dart';
+import '../../../../utils/app_color.dart';
+import '../../../../utils/route_string.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
