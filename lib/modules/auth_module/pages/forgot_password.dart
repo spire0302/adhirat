@@ -12,6 +12,7 @@ class ForgotPassword extends StatelessWidget {
       body: LayoutBuilder(
           builder: (BuildContext ctx, BoxConstraints constraints) {
         if (constraints.maxWidth >= 480) {
+          debugPrint("====> new push");
           return Container(
             height: size.height,
             width: size.width,
