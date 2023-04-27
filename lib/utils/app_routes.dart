@@ -1,7 +1,4 @@
-import 'package:adhirat/modules/auth_module/pages/forgot_password.dart';
 import 'package:adhirat/modules/auth_module/pages/login.dart';
-import 'package:adhirat/modules/auth_module/pages/reset_password.dart';
-import 'package:adhirat/modules/dashboard/pages/dashboard.dart';
 import 'package:adhirat/utils/route_string.dart';
 import 'package:flutter/material.dart';
 
@@ -19,12 +16,6 @@ class AppRouter {
           return const LoginScreen();
         case RouteString.REGISTER_SCREEN:
           return const RegisterScreen();
-        case RouteString.FOEROT_SCREEN:
-          return ForgotPassword();
-        case RouteString.RESET_PASSWORD:
-          return ResetPasswordScreen();
-        case RouteString.DASHBOARD:
-          return DashBoadScreen();
         default:
           return const SplashScreen();
       }
