@@ -1,4 +1,5 @@
 import 'package:adhirat/controller/global_cache.dart';
+import 'package:adhirat/utils/route_string.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -169,15 +170,51 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           hint: AppText.confirmPassword[global.language.value]!,
                           controller: confirmPassword,
                         ),
-                        SizedBox(height: size.height * 0.025),
+                        SizedBox(height: size.height * 0.01),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Obx(
+                              () => Transform.scale(
+                                scale: 0.8,
+                                child: Checkbox(
+                                  value: global.privacyPolicy.value,
+                                  onChanged: (value) {
+                                    global.acceptPrivacyPolicy(value);
+                                  },
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  activeColor: AppColor.primaryColor,
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: SizedBox(
+                                child: Text(
+                                  'By register below, I agree to Terms of Service & Privacy Policy',
+                                  maxLines: 2,
+                                  overflow: TextOverflow.fade,
+                                  softWrap: true,
+                                  style: TextStyle(
+                                    fontSize: size.height * 0.014,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColor.white,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(height: size.height * 0.01),
                         CustomBtn(
                           textSize: size.width * 0.043,
                           onClick: () {
-                            // Navigator.pushNamed(
-                            //     context, RouteString.REGISTER_SCREEN);
+                            Navigator.pushNamed(
+                                context, RouteString.LOGIN_SCREEN);
                           },
                           size: size,
-                          btnName: AppText.login[global.language.value]!,
+                          btnName: AppText.register[global.language.value]!,
                         ),
                         SizedBox(height: size.height * 0.015),
                       ],
