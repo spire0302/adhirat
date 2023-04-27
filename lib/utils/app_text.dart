@@ -16,7 +16,7 @@ class AppText {
     hind: "Password",
   };
   static const Map<String, String> forgotPassword = {
-    eng: "Forgot password ?",
+    eng: "Forgot password",
     hind: "DiaspoBuy",
   };
   static const Map<String, String> loginWithGoogle = {
@@ -51,6 +51,59 @@ class AppText {
 
   static const Map<String, String> youDonHaveAccount = {
     eng: "You don't have a account ? ",
+    hind: "DiaspoBuy",
+  };
+
+  static const Map<String, String> emailOrphone = {
+    eng: "Email or Mobile No. ",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> enterCode = {
+    eng: "Enter Code",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> sendCode = {
+    eng: "Send Code",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> verifyCode = {
+    eng: "Verify Code",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> newPassword = {
+    eng: "New Password",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> setPassword = {
+    eng: "Set Password",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> changePassword = {
+    eng: "Change Password",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> album = {
+    eng: "Album",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> audio = {
+    eng: "Audio",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> video = {
+    eng: "Video",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> image = {
+    eng: "Image",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> categories = {
+    eng: "Categories",
+    hind: "DiaspoBuy",
+  };
+  static const Map<String, String> recentlyadded = {
+    eng: "Recently Added",
     hind: "DiaspoBuy",
   };
 }

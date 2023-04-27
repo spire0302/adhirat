@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             InkWell(
                               onTap: () {},
                               child: Text(
-                                AppText.forgotPassword[global.language.value]!,
+                                "${AppText.forgotPassword[global.language.value]!} ?",
                                 style: TextStyle(
                                   fontSize: 21,
                                   fontWeight: FontWeight.bold,
@@ -189,18 +189,23 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(height: size.height * 0.015),
                         CustomBtn(
                           textSize: size.width * 0.043,
-                          onClick: () {},
+                          onClick: () {
+                            Navigator.pushNamed(context, RouteString.DASHBOARD);
+                          },
                           size: size,
                           btnName: AppText.login[global.language.value]!,
                         ),
-                        SizedBox(height: size.height * 0.016),
+                        SizedBox(height: size.height * 0.015),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, RouteString.FOEROT_SCREEN);
+                              },
                               child: Text(
-                                AppText.forgotPassword[global.language.value]!,
+                                "${AppText.forgotPassword[global.language.value]!} ?",
                                 style: TextStyle(
                                   fontSize: size.width * 0.045,
                                   fontWeight: FontWeight.bold,
@@ -221,8 +226,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         CustomBtn(
                           textSize: size.width * 0.04,
                           onClick: () {
-                            Navigator.pushNamed(
-                                context, RouteString.REGISTER_SCREEN);
+                            // Navigator.pushNamed(
+                            //     context, RouteString.REGISTER_SCREEN);
                           },
                           img: AppImages.googleImg,
                           withIcon: true,

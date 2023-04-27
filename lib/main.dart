@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           fontFamily: "Poppins",
-          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple)
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange)
               .copyWith(background: Colors.white)),
       initialRoute: '/',
       onGenerateRoute: AppRouter.generateRoute,
