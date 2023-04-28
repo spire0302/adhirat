@@ -1,3 +1,4 @@
+import 'package:adhirat/modules/album_module/pages/book_details_screen.dart';
 import 'package:adhirat/modules/auth_module/pages/forgot_password.dart';
 import 'package:adhirat/modules/auth_module/pages/login.dart';
 import 'package:adhirat/modules/auth_module/pages/reset_password.dart';
@@ -10,7 +11,6 @@ import '../modules/auth_module/pages/splash.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    //d//
     final args = settings.arguments;
     return MaterialPageRoute(builder: (context) {
       switch (settings.name) {
@@ -26,6 +26,8 @@ class AppRouter {
           return ResetPasswordScreen();
         case RouteString.DASHBOARD:
           return DashBoadScreen();
+        case RouteString.BOOK_DETAILS:
+          return BookDetailscreen();
         default:
           return const SplashScreen();
       }

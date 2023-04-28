@@ -7,6 +7,7 @@ class RouteString {
   static const FOEROT_SCREEN = "/ForgotPassword";
   static const RESET_PASSWORD = "/ResetPassword";
   static const DASHBOARD = "/Dashboard";
+  static const BOOK_DETAILS = "/BookDetails";
 
   ///
 }

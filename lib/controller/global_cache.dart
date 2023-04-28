@@ -6,6 +6,7 @@ class GlobalController extends GetxController {
   RxBool otpSend = false.obs;
   RxBool privacyPolicy = false.obs;
   RxInt bottombarIndex = 0.obs;
+  RxInt currentImg = 0.obs;
   RxInt selectedCategory = (-1).obs;
 
   void sendOtpFunction() {
@@ -25,6 +26,11 @@ class GlobalController extends GetxController {
 
   void selectCategoryFun(int index) {
     selectedCategory.value = index;
+    update();
+  }
+
+  void onchangeImage(int index) {
+    currentImg.value = index;
     update();
   }
 }
