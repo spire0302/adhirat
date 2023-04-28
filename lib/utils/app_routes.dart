@@ -10,6 +10,7 @@ import '../modules/auth_module/pages/splash.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
+    //drashti
     final args = settings.arguments;
     return MaterialPageRoute(builder: (context) {
       switch (settings.name) {
