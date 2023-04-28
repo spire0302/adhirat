@@ -106,4 +106,8 @@ class AppText {
     eng: "Recently Added",
     hind: "DiaspoBuy",
   };
+  static const Map<String, String> oldPassword = {
+    eng: "Old Password",
+    hind: "DiaspoBuy",
+  };
 }
