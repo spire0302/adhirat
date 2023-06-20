@@ -1,8 +1,11 @@
 class AppImages {
   static const String imagePath = "assets/images";
+  static const String iconPath = "assets/icons";
 
   static const String whiteLogo = "$imagePath/white_logo.jpeg";
   static const String blackLogo = "$imagePath/black_logo.jpeg";
+  static const String withoutBackgroundLogo =
+      "$imagePath/without_background_logo.png";
   static const String loginImg = "$imagePath/loginimg.jpeg";
   static const String book = "$imagePath/book.jpeg";
   static const String book1 = "$imagePath/book1.jpeg";
@@ -10,4 +13,61 @@ class AppImages {
   static const String book3 = "$imagePath/book3.jpeg";
   static const String googleImg = "$imagePath/google.png";
   static const String appleImg = "$imagePath/apple.png";
+  static const String menu = "$imagePath/menu.png";
+  static const String mahabharat = "$imagePath/mahabharat.jpeg";
+  static const String mhb = "$imagePath/mhb.jpg";
+  static const String mhb2 = "$imagePath/mhb2.jpeg";
+  static const String mhb3 = "$imagePath/mhb4.jpeg";
+  static const String ebookIcon = "$imagePath/book_icon.png";
+  static const String musicIcon = "$imagePath/music_icon.png";
+  static const String imageIcon = "$imagePath/image_icon.png";
+  static const String quizzesIcon = "$imagePath/puzzle_icon.png";
+  static const String sadhnaIcon = "$imagePath/meditation_icon.png";
+  static const String eventCalenderIcon = "$imagePath/calendar_icon.png";
+  static const String eStoreIcon = "$imagePath/estore_icon.png";
+  static const String profileIcon = "$imagePath/user.png";
+  static const String contactUSIcon = "$imagePath/contactus.png";
+  static const String aboutUSIcon = "$imagePath/aboutus.png";
+  static const String settingIcon = "$imagePath/setting.png";
+  static const String privacyPolicyIcon = "$imagePath/privacypolicy.png";
+  static const String shareIcon = "$imagePath/share.png";
+  static const String shareVid = "$imagePath/shareVid.png";
+  static const String logOutIcon = "$imagePath/logout.png";
+  static const String profile = "$imagePath/profile.png";
+  static const String back = "$imagePath/back.png";
+  static const String appstore = "$imagePath/appstore.png";
+  static const String playStore = "$imagePath/playstore.png";
+  static const String sort = "$imagePath/sort.png";
+  static const String addPlaylist = "$imagePath/addPlaylist.png";
+  static const String quiz = "$imagePath/3dquiz.jpg";
+
+  static const String bookIcon = "$iconPath/book.png";
+  static const String bookBlackIcon = "$iconPath/bookblack.png";
+  static const String audioIcon = "$iconPath/audio.png";
+  static const String audioBlackIcon = "$iconPath/audioblack.png";
+  static const String videoIcon = "$iconPath/video.png";
+  static const String videoBlackIcon = "$iconPath/videoblack.png";
+  static const String imagesIcon = "$iconPath/images.png";
+  static const String imagesBlackIcon = "$iconPath/imagesblack.png";
+  static const String estoreIcon = "$iconPath/estore.png";
+  static const String estoreBlackIcon = "$iconPath/estoreblack.png";
+  static const String homeIcon = "$iconPath/home.png";
+  static const String homeBlackIcon = "$iconPath/homeblack.png";
+  static const String halfsatr = "$iconPath/Half Star.png";
+  static const String fullstar = "$iconPath/Star Deactive (1).png";
+  static const String star = "$iconPath/Star Deactive (1).png";
+
+  static const String notification = "$iconPath/bell.png";
+  static const String bookmark = "$iconPath/bookmark.png";
+  static const String cart = "$iconPath/trolley.png";
+  static const String setting = "$iconPath/cogwheel.png";
+  static const String menuIcon = "$iconPath/menu.png";
+  static const String sadhnavard = "assets/icons/sadhnacard.gif";
+  static const String calemder = "assets/icons/callander.gif";
+  static const String quizicon = "assets/icons/animation_500_liplkrox.gif";
+  static const String eshope = "assets/icons/animation_500_liplm4j1.gif";
+  static const String darksadhnavard = "assets/icons/darksadhnacard.gif";
+  static const String darkcalemder = "assets/icons/darkcalender.gif";
+  static const String darkquizicon = "assets/icons/darkquiz.gif";
+  static const String darkeshope = "assets/icons/darkestore.gif";
 }

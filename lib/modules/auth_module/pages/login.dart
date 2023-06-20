@@ -1,5 +1,6 @@
 import 'package:adhirat/controller/global_cache.dart';
 import 'package:adhirat/modules/auth_module/widgets/back_container.dart';
+import 'package:adhirat/modules/dashboard/pages/dashboard.dart';
 import 'package:adhirat/utils/app_color.dart';
 import 'package:adhirat/utils/app_image.dart';
 import 'package:adhirat/utils/app_text.dart';
@@ -18,7 +19,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  GlobalController global = Get.put(GlobalController());
+  GlobalController globalController = Get.put(GlobalController());
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
@@ -30,8 +31,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: LayoutBuilder(
           builder: (BuildContext ctx, BoxConstraints constraints) {
-        if (constraints.maxWidth >= 480) {
-          debugPrint("====> constraints.maxWidth >= 480");
+        if (constraints.maxWidth >= 700) {
+          debugPrint("====> constraints.maxWidth >= 700");
           portrait.value = true;
           return Container(
             height: size.height,
@@ -45,113 +46,130 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(height: size.height * 0.05),
-                BackContainer(
-                    size: size,
-                    widget: Column(
-                      children: [
-                        SizedBox(height: size.height * 0.01),
-                        CustomTextFild(
-                          whit: true,
-                          size: size,
-                          hint: AppText.emailAddress[global.language.value]!,
-                          controller: email,
-                        ),
-                        SizedBox(height: size.height * 0.01),
-                        CustomTextFild(
-                          whit: true,
-                          size: size,
-                          hint: AppText.password[global.language.value]!,
-                          controller: password,
-                        ),
-                        SizedBox(height: size.height * 0.015),
-                        CustomBtn(
-                          textSize: 20,
-                          onClick: () {},
-                          size: size,
-                          btnName: AppText.login[global.language.value]!,
-                        ),
-                        SizedBox(height: size.height * 0.016),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(context,
-                                    RouteString.FORGOT_PASSWORD_SCREEN);
-                              },
-                              child: Text(
-                                "${AppText.forgotPassword[global.language.value]!} ?",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColor.secondaryColor,
+                Obx(
+                  () => BackContainer(
+                      globalController: globalController,
+                      size: size,
+                      widget: Column(
+                        children: [
+                          SizedBox(height: size.height * 0.01),
+                          CustomTextFild(
+                            globalController: globalController,
+                            whit: true,
+                            size: size,
+                            hint: AppText
+                                .emailAddress[globalController.language.value]!,
+                            controller: email,
+                          ),
+                          SizedBox(height: size.height * 0.01),
+                          CustomTextFild(
+                            whit: true,
+                            size: size,
+                            globalController: globalController,
+                            hint: AppText
+                                .password[globalController.language.value]!,
+                            controller: password,
+                          ),
+                          SizedBox(height: size.height * 0.015),
+                          CustomBtn(
+                            textSize: 20,
+                            onClick: () {
+                              Navigator.pushNamed(
+                                  context, RouteString.DASHBOARD);
+                            },
+                            globalController: globalController,
+                            size: size,
+                            btnName:
+                                AppText.login[globalController.language.value]!,
+                          ),
+                          SizedBox(height: size.height * 0.016),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, RouteString.FOEROT_SCREEN);
+                                },
+                                child: Text(
+                                  "${AppText.forgotPassword[globalController.language.value]!} ?",
+                                  style: TextStyle(
+                                    fontSize: 21,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColor.primaryColor,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(width: size.width * 0.012),
-                          ],
-                        ),
-                        SizedBox(height: size.height * 0.03),
-                        Divider(
-                          color: AppColor.white,
-                          thickness: 1,
-                          height: 1,
-                        ),
-                        SizedBox(height: size.height * 0.03),
-                        CustomBtn(
-                          textSize: 20,
-                          onClick: () {},
-                          img: AppImages.googleImg,
-                          withIcon: true,
-                          size: size,
-                          btnName:
-                              AppText.loginWithGoogle[global.language.value]!,
-                        ),
-                        SizedBox(height: size.height * 0.01),
-                        CustomBtn(
-                          textSize: 20,
-                          onClick: () {},
-                          img: AppImages.appleImg,
-                          withIcon: true,
-                          size: size,
-                          btnName:
-                              AppText.loginWithApple[global.language.value]!,
-                        ),
-                        SizedBox(height: size.height * 0.015),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Text(
-                                "You don't have a account ? ",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColor.white,
+                              SizedBox(width: size.width * 0.012),
+                            ],
+                          ),
+                          SizedBox(height: size.height * 0.03),
+                          Divider(
+                            color: AppColor
+                                .blackcolor[globalController.dark.value]!,
+                            thickness: 1,
+                            height: 1,
+                          ),
+                          SizedBox(height: size.height * 0.03),
+                          CustomBtn(
+                            globalController: globalController,
+                            textSize: 20,
+                            onClick: () {},
+                            img: AppImages.googleImg,
+                            withIcon: true,
+                            size: size,
+                            btnName: AppText.loginWithGoogle[
+                                globalController.language.value]!,
+                          ),
+                          SizedBox(height: size.height * 0.01),
+                          CustomBtn(
+                            globalController: globalController,
+                            textSize: 20,
+                            onClick: () {},
+                            img: AppImages.appleImg,
+                            withIcon: true,
+                            size: size,
+                            btnName: AppText.loginWithApple[
+                                globalController.language.value]!,
+                          ),
+                          SizedBox(height: size.height * 0.015),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: Text(
+                                  "You don't have a account ? ",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColor.whitecolor[
+                                        globalController.dark.value]!,
+                                  ),
                                 ),
                               ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, RouteString.REGISTER_SCREEN);
-                              },
-                              child: Text(
-                                AppText.register[global.language.value]!,
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColor.primaryColor,
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, RouteString.REGISTER_SCREEN);
+                                },
+                                child: Text(
+                                  AppText.register[
+                                      globalController.language.value]!,
+                                  style: TextStyle(
+                                    fontSize: 21,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColor.primaryColor,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: size.height * 0.02),
-                      ],
-                    ),
-                    landScape: true),
+                            ],
+                          ),
+                          SizedBox(height: size.height * 0.02),
+                        ],
+                      ),
+                      landScape: true),
+                ),
               ],
             ),
           );
@@ -165,126 +183,137 @@ class _LoginScreenState extends State<LoginScreen> {
               image: AssetImage(AppImages.loginImg),
             )),
             child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(height: size.height * 0.25),
-                  BackContainer(
-                    size: size,
-                    widget: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: size.height * 0.02),
-                        CustomTextFild(
-                          whit: true,
-                          size: size,
-                          hint: AppText.emailAddress[global.language.value]!,
-                          controller: email,
-                        ),
-                        SizedBox(height: size.height * 0.01),
-                        CustomTextFild(
-                          whit: true,
-                          size: size,
-                          hint: AppText.password[global.language.value]!,
-                          controller: email,
-                        ),
-                        SizedBox(height: size.height * 0.015),
-                        CustomBtn(
-                          textSize: size.width * 0.043,
-                          onClick: () {
-                            Navigator.pushNamed(context, RouteString.DASHBOARD);
-                          },
-                          size: size,
-                          btnName: AppText.login[global.language.value]!,
-                        ),
-                        SizedBox(height: size.height * 0.015),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, RouteString.FOEROT_SCREEN);
-                              },
-                              child: Text(
-                                "${AppText.forgotPassword[global.language.value]!} ?",
-                                style: TextStyle(
-                                  fontSize: size.width * 0.045,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColor.secondaryColor,
+              child: Obx(
+                () => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: size.height * 0.25),
+                    BackContainer(
+                      globalController: globalController,
+                      size: size,
+                      widget: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: size.height * 0.02),
+                          CustomTextFild(
+                            globalController: globalController,
+                            whit: true,
+                            size: size,
+                            hint: AppText
+                                .emailAddress[globalController.language.value]!,
+                            controller: email,
+                          ),
+                          SizedBox(height: size.height * 0.01),
+                          CustomTextFild(
+                            whit: true,
+                            size: size,
+                            globalController: globalController,
+                            hint: AppText
+                                .password[globalController.language.value]!,
+                            controller: password,
+                          ),
+                          SizedBox(height: size.height * 0.015),
+                          CustomBtn(
+                            textSize: size.width * 0.043,
+                            onClick: () {
+                              Get.offAll(() => DashBoadScreen());
+                            },
+                            globalController: globalController,
+                            size: size,
+                            btnName:
+                                AppText.login[globalController.language.value]!,
+                          ),
+                          SizedBox(height: size.height * 0.015),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, RouteString.FOEROT_SCREEN);
+                                },
+                                child: Text(
+                                  "${AppText.forgotPassword[globalController.language.value]!} ?",
+                                  style: TextStyle(
+                                    fontSize: size.width * 0.045,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColor.primaryColor,
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(width: size.width * 0.01),
-                          ],
-                        ),
-                        SizedBox(height: size.height * 0.03),
-                        Divider(
-                          color: AppColor.white,
-                          thickness: 1,
-                          height: 1,
-                        ),
-                        SizedBox(height: size.height * 0.03),
-                        CustomBtn(
-                          textSize: size.width * 0.04,
-                          onClick: () {
-                            // Navigator.pushNamed(
-                            //     context, RouteString.REGISTER_SCREEN);
-                          },
-                          img: AppImages.googleImg,
-                          withIcon: true,
-                          size: size,
-                          btnName:
-                              AppText.loginWithGoogle[global.language.value]!,
-                        ),
-                        SizedBox(height: size.height * 0.01),
-                        CustomBtn(
-                          textSize: size.width * 0.04,
-                          onClick: () {},
-                          img: AppImages.appleImg,
-                          withIcon: true,
-                          size: size,
-                          btnName:
-                              AppText.loginWithApple[global.language.value]!,
-                        ),
-                        SizedBox(height: size.height * 0.015),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Text(
-                                AppText
-                                    .youDonHaveAccount[global.language.value]!,
-                                style: TextStyle(
-                                  fontSize: size.width * 0.038,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColor.white,
+                              SizedBox(width: size.width * 0.01),
+                            ],
+                          ),
+                          SizedBox(height: size.height * 0.03),
+                          Divider(
+                            color: AppColor.grey,
+                            thickness: 1,
+                            height: 1,
+                          ),
+                          SizedBox(height: size.height * 0.03),
+                          CustomBtn(
+                            globalController: globalController,
+                            textSize: size.width * 0.04,
+                            onClick: () {},
+                            img: AppImages.googleImg,
+                            withIcon: true,
+                            size: size,
+                            btnName: AppText.loginWithGoogle[
+                                globalController.language.value]!,
+                          ),
+                          SizedBox(height: size.height * 0.01),
+                          CustomBtn(
+                            textSize: size.width * 0.04,
+                            onClick: () {},
+                            globalController: globalController,
+                            img: AppImages.appleImg,
+                            color: isdark.value ? Colors.black : Colors.white,
+                            withIcon: true,
+                            size: size,
+                            btnName: AppText.loginWithApple[
+                                globalController.language.value]!,
+                          ),
+                          SizedBox(height: size.height * 0.015),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: Text(
+                                  AppText.youDonHaveAccount[
+                                      globalController.language.value]!,
+                                  style: TextStyle(
+                                    fontSize: size.width * 0.038,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColor.blackcolor[
+                                        globalController.dark.value]!,
+                                  ),
                                 ),
                               ),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, RouteString.REGISTER_SCREEN);
-                              },
-                              child: Text(
-                                AppText.register[global.language.value]!,
-                                style: TextStyle(
-                                  fontSize: size.width * 0.042,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColor.primaryColor,
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, RouteString.REGISTER_SCREEN);
+                                },
+                                child: Text(
+                                  AppText.register[
+                                      globalController.language.value]!,
+                                  style: TextStyle(
+                                    fontSize: size.width * 0.042,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColor.primaryColor,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: size.height * 0.02),
-                      ],
+                            ],
+                          ),
+                          SizedBox(height: size.height * 0.02),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );

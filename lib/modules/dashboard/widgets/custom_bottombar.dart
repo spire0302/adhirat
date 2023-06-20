@@ -20,7 +20,7 @@ class CustomBottombar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 6,
-      color: AppColor.white,
+      color: AppColor.whitecolor[globalController.dark.value]!,
       child: Container(
         width: size.width,
         padding: EdgeInsets.symmetric(vertical: size.height * 0.011),
@@ -37,13 +37,13 @@ class CustomBottombar extends StatelessWidget {
                     Icons.album_outlined,
                     color: globalController.bottombarIndex.value == 0
                         ? AppColor.primaryColor
-                        : AppColor.black.withOpacity(0.25),
+                        : AppColor.blackcolor[globalController.dark.value]!.withOpacity(0.25),
                     size: size.height * 0.03,
                   ),
                   lableColor: globalController.bottombarIndex.value == 0
                       ? AppColor.primaryColor
-                      : AppColor.black.withOpacity(0.25),
-                  lable: AppText.album[globalController.language.value]!),
+                      : AppColor.blackcolor[globalController.dark.value]!.withOpacity(0.25),
+                  lable: AppText.eBook[globalController.language.value]!),
               BottomBarItem(
                   size: size,
                   onTap: () {
@@ -54,11 +54,11 @@ class CustomBottombar extends StatelessWidget {
                     size: size.height * 0.03,
                     color: globalController.bottombarIndex.value == 1
                         ? AppColor.primaryColor
-                        : AppColor.black.withOpacity(0.25),
+                        : AppColor.blackcolor[globalController.dark.value]!.withOpacity(0.25),
                   ),
                   lableColor: globalController.bottombarIndex.value == 1
                       ? AppColor.primaryColor
-                      : AppColor.black.withOpacity(0.25),
+                      : AppColor.blackcolor[globalController.dark.value]!.withOpacity(0.25),
                   lable: AppText.video[globalController.language.value]!),
               BottomBarItem(
                   size: size,
@@ -70,11 +70,11 @@ class CustomBottombar extends StatelessWidget {
                     size: size.height * 0.03,
                     color: globalController.bottombarIndex.value == 2
                         ? AppColor.primaryColor
-                        : AppColor.black.withOpacity(0.25),
+                        : AppColor.blackcolor[globalController.dark.value]!.withOpacity(0.25),
                   ),
                   lableColor: globalController.bottombarIndex.value == 2
                       ? AppColor.primaryColor
-                      : AppColor.black.withOpacity(0.25),
+                      : AppColor.blackcolor[globalController.dark.value]!.withOpacity(0.25),
                   lable: AppText.audio[globalController.language.value]!),
               BottomBarItem(
                   size: size,
@@ -86,11 +86,11 @@ class CustomBottombar extends StatelessWidget {
                     size: size.height * 0.03,
                     color: globalController.bottombarIndex.value == 3
                         ? AppColor.primaryColor
-                        : AppColor.black.withOpacity(0.25),
+                        : AppColor.blackcolor[globalController.dark.value]!.withOpacity(0.25),
                   ),
                   lableColor: globalController.bottombarIndex.value == 3
                       ? AppColor.primaryColor
-                      : AppColor.black.withOpacity(0.25),
+                      : AppColor.blackcolor[globalController.dark.value]!.withOpacity(0.25),
                   lable: AppText.image[globalController.language.value]!)
             ],
           ),
