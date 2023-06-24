@@ -1,53 +1,50 @@
 import 'package:adhirat/utils/app_color.dart';
+import 'package:adhirat/widgets/comman_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+import '../controller/global_cache.dart';
+
+class CustomAppBar extends StatelessWidget {
   final bool showLeading;
+  final GlobalController globalController;
   final bool showTitle;
   final void Function()? onTapLead;
   final Size size;
+  final double? elevation;
   final String title;
   final List<Widget>? iconWidgets;
+
   const CustomAppBar(
       {super.key,
       this.showLeading = false,
       this.showTitle = true,
       this.onTapLead,
       required this.size,
+      required this.globalController,
       required this.title,
-      this.iconWidgets});
+      this.iconWidgets,
+      this.elevation});
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return Obx(() => AppBar(
       automaticallyImplyLeading: false,
       centerTitle: true,
-      elevation: 0,
-      backgroundColor: AppColor.white,
-      leading: showLeading
-          ? InkWell(
-              onTap: onTapLead,
-              child: Icon(
-                Icons.arrow_back_ios_new,
-                color: AppColor.black,
-                size: size.height * 0.025,
-              ),
-            )
-          : const SizedBox.shrink(),
+      elevation: elevation ?? 0,
+      backgroundColor: AppColor.whitecolor[globalController.dark.value]!,
+      leading: showLeading ? backArrow(globalController:globalController,context:context,size:size): const SizedBox.shrink(),
       title: showTitle
           ? Text(
-              title,
-              style: TextStyle(
-                color: AppColor.black,
-                fontSize: size.height * 0.024,
-                letterSpacing: 0.6,
-              ),
-            )
+        title,
+        style: TextStyle(
+          color: AppColor.blackcolor[globalController.dark.value]!,
+          fontSize: size.height * 0.024,
+          letterSpacing: 0.6,
+        ),
+      )
           : const SizedBox.shrink(),
       actions: iconWidgets,
-    );
+    ));
   }
-
-  @override
-  Size get preferredSize => Size.fromHeight(size.height * 0.07);
 }
